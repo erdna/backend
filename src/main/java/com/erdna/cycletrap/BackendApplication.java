@@ -19,36 +19,36 @@ public class BackendApplication {
         SpringApplication.run(BackendApplication.class);
     }
 
-    @Bean
-    public CommandLineRunner demo(TrapRepository repository) {
-        return (args) -> {
-            // save a couple of customers
-            repository.save(new Trap("Schlagloch"));
-            repository.save(new Trap("Fahrradweg zu Ende"));
-            repository.save(new Trap("Scherben"));
-
-            // fetch all customers
-            log.info("Traps found with findAll():");
-            log.info("-------------------------------");
-            for (Trap trap : repository.findAll()) {
-                log.info(trap.toString());
-            }
-            log.info("");
-
-            // fetch an individual trap by ID
-            Trap trap = repository.findOne(1L);
-            log.info("Trap found with findOne(1L):");
-            log.info("--------------------------------");
-            log.info(trap.toString());
-            log.info("");
-
-            // fetch customers by last name
-            log.info("Trap found with findByName('Schlagloch'):");
-            log.info("--------------------------------------------");
-            for (Trap bauer : repository.findByName("Schlagloch")) {
-                log.info(bauer.toString());
-            }
-            log.info("");
-        };
-    }
+//    @Bean
+//    public CommandLineRunner demo(TrapRepository repository) {
+//        return (args) -> {
+//            // save a couple of customers
+//            repository.save(new Trap("Schlagloch"));
+//            repository.save(new Trap("Fahrradweg zu Ende"));
+//            repository.save(new Trap("Scherben"));
+//
+//            // fetch all customers
+//            log.info("Traps found with findAll():");
+//            log.info("-------------------------------");
+//            for (Trap trap : repository.findAll()) {
+//                log.info(trap.toString());
+//            }
+//            log.info("");
+//
+//            // fetch an individual trap by ID
+//            Trap trap = repository.findOne(1L);
+//            log.info("Trap found with findOne(1L):");
+//            log.info("--------------------------------");
+//            log.info(trap.toString());
+//            log.info("");
+//
+//            // fetch customers by last name
+//            log.info("Trap found with findByName('Schlagloch'):");
+//            log.info("--------------------------------------------");
+//            for (Trap bauer : repository.findByName("Schlagloch")) {
+//                log.info(bauer.toString());
+//            }
+//            log.info("");
+//        };
+//    }
 }

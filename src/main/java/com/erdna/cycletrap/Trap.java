@@ -13,6 +13,8 @@ public class Trap {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private double latitude;
+    private double longitude;
 
     public String getName() {
         return name;
@@ -44,4 +46,19 @@ public class Trap {
         return String.format("Trap[id=%d, name='%s']", id, name);
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
 }
